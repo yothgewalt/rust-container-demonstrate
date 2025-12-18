@@ -24,7 +24,7 @@ struct HealthResponse {
 
 async fn health_check() -> impl IntoResponse {
     let response = HealthResponse {
-        status: "healthy".to_string(),
+        status: "healthy!".to_string(),
     };
     (StatusCode::OK, Json(response))
 }
