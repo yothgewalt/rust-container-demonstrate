@@ -31,10 +31,10 @@ async fn health_check() -> impl IntoResponse {
 }
 
 async fn echo_message(Json(payload): Json<MessageRequest>) -> impl IntoResponse {
+    println!("Echo message request received: {}", payload.message);
     let response = MessageResponse {
         echo: payload.message,
     };
-    println!("Echo message request received: {}", payload.message);
     (StatusCode::OK, Json(response))
 }
 
